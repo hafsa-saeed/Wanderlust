@@ -4,15 +4,15 @@ const Schema = mongoose.Schema;
 const ListingSchema = new Schema({
   title: {
     type: String,
-    required: true
+    required: true,
   },
   description: String,
   Image: {
     type: String,
-    default: "./images/Hotel1.jpg",
-    set: (v)=> v===""? "./images/Hotel1.jpg" : v,
+    default: "/images/Hotel1.jpg",
+    set: (v) => (v === "" ? "/images/Hotel1.jpg" : v),
   },
-  Price: Number,
+  price: Number,
   location: String,
   country: String,
 });
